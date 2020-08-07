@@ -62,7 +62,7 @@ class Text
   end
 
   def self.delete_all(message, argv)
-    message = delete_name(message, argv)
+    message = delete_name(message, argv) unless argv.empty?
     message = delete_two_or_more_newline_code(message)
     message = delete_reaction_emoji_and_reaction_number(message)
     message = delete_edited(message)
